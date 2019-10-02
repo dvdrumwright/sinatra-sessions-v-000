@@ -53,6 +53,7 @@ class App < Sinatra::Base
   end
 
   get '/logout' do
+    session = {}
     old_user = session[:id]
     session[:id] = nil
     "logged out #{old_user}"
