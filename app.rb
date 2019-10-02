@@ -54,8 +54,9 @@ class App < Sinatra::Base
 
   get '/logout' do
     session = {}
-    old_user = session[:id]
-    session[:id] = nil
+    session = nil
+    old_user = session
+  
     "logged out #{old_user}"
     "Session has now been cleared. session content: #{session.inspect}. Continue on to the '/finish' line!"
   end
